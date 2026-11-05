@@ -133,6 +133,13 @@ h1,h2,h3,p{margin:0;text-wrap:balance}
 .offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
 @media(max-width:900px){.offers{grid-template-columns:minmax(0,1fr)}}
 .offers .tile{min-height:240px}
+.cvbox{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:center;background:var(--surface);border-radius:32px;padding:clamp(20px,4vw,44px);box-shadow:inset 0 0 0 1px var(--line)}
+@media(max-width:760px){.cvbox{grid-template-columns:minmax(0,1fr);text-align:center}.cvbox .cta{justify-content:center!important}.cvbox__img{max-width:300px;margin:0 auto}}
+.cvbox__img{display:block;border-radius:14px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.6),0 0 0 1px var(--line);transition:transform .5s var(--ease)}
+.cvbox__img:hover{transform:translateY(-6px) rotate(-1deg)}
+.cvbox__img img{display:block;width:100%;height:auto}
+.cvbox__txt .sub{margin-inline:0}
+@media(max-width:760px){.cvbox__txt .sub{margin-inline:auto}}
 .stack{margin-top:16px;background:var(--surface-2);border-radius:26px;padding:26px;box-shadow:inset 0 0 0 1px var(--line)}
 .stack h3{font-size:13px;color:var(--mute);font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
@@ -156,8 +163,8 @@ h1,h2,h3,p{margin:0;text-wrap:balance}
 <header class="nav">
   <div class="nav__in">
     <a class="nav__brand" href="#top">Leodennis Matos Frometa</a>
-    <nav class="nav__links" aria-label="Sections"><a href="#work">Work</a><a href="#skills">Skills</a><a href="#offers">Offers</a><a href="#contact">Contact</a></nav>
-    <a class="btn btn--sm" href="#contact">Hire me</a>
+    <nav class="nav__links" aria-label="Sections"><a href="#work">Work</a><a href="#skills">Skills</a><a href="#offers">Offers</a><a href="#cv">CV</a><a href="#contact">Contact</a></nav>
+    <a class="btn btn--sm" href="Leodennis_Matos_Frometa_CV.pdf" download>Download CV</a>
   </div>
 </header>
 
@@ -168,7 +175,7 @@ h1,h2,h3,p{margin:0;text-wrap:balance}
       <p class="eyebrow rise">AI Visual Content Creator · Dubai</p>
       <h1 class="rise">Visuals that <span class="grad">sell.</span></h1>
       <p class="lead rise">Rhythm makes the cut, now powered by AI.</p>
-      <div class="cta rise"><a class="btn" href="#work">Watch my work</a><a class="link" href="#contact">Get in touch ›</a></div>
+      <div class="cta rise"><a class="btn" href="#work">Watch my work</a><a class="btn btn--ghost" href="Leodennis_Matos_Frometa_CV.pdf" download>Download CV</a><a class="link" href="#contact">Get in touch ›</a></div>
     </div>
     <div class="stage" id="stage" aria-hidden="true">
       <div class="phone"><video src="videos/clip-04.mp4" poster="posters/clip-04.jpg" muted loop playsinline autoplay preload="metadata"></video></div>
@@ -237,6 +244,21 @@ h1,h2,h3,p{margin:0;text-wrap:balance}
     <div class="cta rv" style="margin-top:30px"><a class="btn" href="#contact">Request a plan</a></div>
   </section>
 
+  <section class="section wrap" id="cv">
+    <div class="cvbox rv">
+      <a class="cvbox__img" href="Leodennis_Matos_Frometa_CV.pdf" target="_blank" rel="noopener" aria-label="Open my CV as PDF"><img src="cv-preview.jpg" width="910" height="1287" alt="Preview of Leodennis Matos Frometa's CV" loading="lazy"></a>
+      <div class="cvbox__txt">
+        <p class="eyebrow">Curriculum vitae</p>
+        <h2>My CV, one page.</h2>
+        <p class="sub">AI Visual Content Creator based in Dubai. Skills, tools, experience and education in a single PDF.</p>
+        <div class="cta" style="justify-content:flex-start;margin-top:26px">
+          <a class="btn" href="Leodennis_Matos_Frometa_CV.pdf" download>Download CV (PDF)</a>
+          <a class="link" href="Leodennis_Matos_Frometa_CV.pdf" target="_blank" rel="noopener">View online ›</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="contact wrap" id="contact">
     <div class="rv">
       <h2>Let&rsquo;s make something <span class="grad">people stop for.</span></h2>
@@ -245,7 +267,7 @@ h1,h2,h3,p{margin:0;text-wrap:balance}
         <div class="copy"><span>matosleo491@gmail.com</span><button type="button" data-copy="matosleo491@gmail.com">Copy</button></div>
         <div class="copy"><span>+971 528 859 824</span><button type="button" data-copy="+971 528 859 824">Copy</button></div>
       </div>
-      <div class="cta" style="margin-top:26px"><a class="btn" href="https://wa.me/971528859824?text=Hi%20Leodennis%2C%20I%20saw%20your%20portfolio." target="_blank" rel="noopener">Message on WhatsApp</a></div>
+      <div class="cta" style="margin-top:26px"><a class="btn btn--ghost" href="Leodennis_Matos_Frometa_CV.pdf" download>Download CV</a><a class="btn" href="https://wa.me/971528859824?text=Hi%20Leodennis%2C%20I%20saw%20your%20portfolio." target="_blank" rel="noopener">Message on WhatsApp</a></div>
     </div>
   </section>
 </main>
