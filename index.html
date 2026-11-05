@@ -1,0 +1,358 @@
+<title>Leodennis Matos Frometa Portafolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="AI video and marketing visuals by Leodennis Matos Frometa, Dubai.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/motion@10.18.0/dist/motion.js"></script>
+<style>
+/* Layout: black stage, glass nav, three-phone hero that drifts on scroll, filterable 9:16 video wall, tile grid, closing contact. */
+:root{
+  --bg:#000; --surface:#161618; --surface-2:#1d1d1f; --fg:#f5f5f7; --mute:#a1a1a6; --line:rgba(255,255,255,.12);
+  --blue:#0a84ff; --blue-hi:#409cff; --violet:#bf5af2; --pink:#ff375f; --cyan:#64d2ff;
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:#000}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);font-size:17px;line-height:1.47;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:rgba(0,0,0,.72);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+main{overflow-x:clip;margin-left:calc(-1 * max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1 * max(16px,env(safe-area-inset-right,0px)));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+:focus-visible{outline:2px solid var(--blue-hi);outline-offset:3px;border-radius:12px}
+video{display:block;width:100%;height:100%;object-fit:cover;background:#0b0b0c}
+h1,h2,h3,p{margin:0;text-wrap:balance}
+.wrap{max-width:1080px;margin:0 auto}
+.grad{background:linear-gradient(90deg,var(--cyan),var(--blue) 35%,var(--violet) 70%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{font-size:15px;font-weight:600;color:var(--mute);letter-spacing:.01em;margin-bottom:12px}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;margin:0 calc(-1 * max(16px,env(safe-area-inset-left,0px))) 0 calc(-1 * max(16px,env(safe-area-inset-right,0px)));
+  padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));background:rgba(0,0,0,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+.nav__in{max-width:1080px;margin:0 auto;height:48px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav__brand{font-weight:600;font-size:15px;letter-spacing:-.01em;white-space:nowrap}
+.nav__links{display:flex;gap:26px;font-size:13px;color:var(--mute)}
+.nav__links a{transition:color .2s}.nav__links a:hover{color:var(--fg)}
+@media(max-width:560px){.nav__links{display:none}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 24px;border-radius:999px;background:var(--blue);color:#fff;font-size:17px;font-weight:500;transition:transform .3s var(--ease),background .2s,box-shadow .3s}
+.btn:hover{background:var(--blue-hi);transform:scale(1.03);box-shadow:0 10px 34px rgba(10,132,255,.35)}
+.btn--sm{min-height:30px;padding:0 14px;font-size:13px}
+.btn--ghost{background:rgba(255,255,255,.1)}.btn--ghost:hover{background:rgba(255,255,255,.18);box-shadow:none}
+.link{color:#2997ff;font-size:17px}.link:hover{text-decoration:underline}
+
+/* hero */
+.hero{position:relative;text-align:center;padding-block:72px 0}
+.hero::before{content:"";position:absolute;inset:-60px -50vw auto;height:640px;background:radial-gradient(50% 55% at 50% 25%,rgba(10,132,255,.30),transparent 70%),radial-gradient(35% 40% at 82% 15%,rgba(191,90,242,.22),transparent 70%),radial-gradient(30% 35% at 15% 20%,rgba(255,55,95,.14),transparent 70%);pointer-events:none}
+.hero__copy{position:relative;z-index:2}
+.portrait{position:relative;width:min(430px,80vw);aspect-ratio:3/4;margin:0 auto -96px;z-index:1}
+.portrait__in{position:absolute;inset:0;isolation:isolate;
+  -webkit-mask-image:radial-gradient(ellipse 50% 56% at 55% 37%,#000 42%,rgba(0,0,0,.5) 70%,transparent 100%);
+  mask-image:radial-gradient(ellipse 50% 56% at 55% 37%,#000 42%,rgba(0,0,0,.5) 70%,transparent 100%)}
+.portrait__in img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.08) contrast(1.04)}
+.portrait__in::before{content:"";position:absolute;inset:0;z-index:1;mix-blend-mode:soft-light;
+  background:linear-gradient(150deg,rgba(10,132,255,.95) 0%,rgba(100,210,255,.35) 28%,rgba(191,90,242,.7) 62%,rgba(255,55,95,.85) 100%)}
+.portrait__in::after{content:"";position:absolute;inset:0;z-index:2;
+  background:linear-gradient(180deg,transparent 52%,rgba(0,0,0,.55) 78%,#000 100%),
+  radial-gradient(60% 50% at 50% 38%,transparent 40%,rgba(0,0,0,.35) 100%)}
+.portrait::before{content:"";position:absolute;inset:6% -14% 0;z-index:-1;filter:blur(46px);opacity:.85;
+  background:radial-gradient(40% 38% at 28% 42%,rgba(10,132,255,.6),transparent 70%),radial-gradient(38% 36% at 74% 40%,rgba(191,90,242,.55),transparent 70%),radial-gradient(40% 30% at 50% 82%,rgba(255,55,95,.4),transparent 70%)}
+@media(max-width:560px){.portrait{margin-bottom:-70px}}
+.hero h1{font-size:clamp(46px,11vw,104px);line-height:1;letter-spacing:-.045em;font-weight:700}
+.lead{font-size:clamp(19px,2.8vw,28px);color:var(--mute);margin:20px auto 28px;max-width:640px;letter-spacing:-.01em}
+.cta{display:flex;gap:12px 24px;flex-wrap:wrap;align-items:center;justify-content:center}
+.rise{animation:rise 1s var(--ease) both}
+.rise:nth-child(2){animation-delay:.12s}.rise:nth-child(3){animation-delay:.24s}.rise:nth-child(4){animation-delay:.36s}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.stage{position:relative;display:flex;justify-content:center;align-items:flex-start;gap:clamp(8px,2vw,20px);margin-top:48px;height:clamp(300px,52vw,500px);overflow:hidden;
+  -webkit-mask-image:linear-gradient(180deg,#000 80%,transparent);mask-image:linear-gradient(180deg,#000 80%,transparent)}
+.phone{--p:0;flex:0 0 auto;width:clamp(100px,26vw,232px);aspect-ratio:9/16;border-radius:clamp(16px,3vw,30px);overflow:hidden;background:#0b0b0c;
+  box-shadow:0 0 0 clamp(2px,.5vw,5px) #0c0c0e,0 0 0 clamp(3px,.6vw,6px) #2a2a2d,0 30px 80px rgba(0,0,0,.7);will-change:transform;
+  transform:translateY(calc(var(--p) * var(--dy))) rotate(var(--r))}
+.phone:nth-child(1){--dy:-60px;--r:-6deg;margin-top:40px}
+.phone:nth-child(2){--dy:-20px;--r:0deg;width:clamp(118px,34vw,300px)}
+.phone:nth-child(3){--dy:-110px;--r:6deg;margin-top:40px}
+
+/* sections */
+.section{padding-block:96px}
+.section h2{font-size:clamp(32px,6vw,58px);line-height:1.05;letter-spacing:-.035em;font-weight:700}
+.sub{color:var(--mute);font-size:clamp(17px,2.2vw,21px);margin-top:14px;max-width:620px}
+.rv{opacity:1}
+@supports (animation-timeline:view()){
+  .rv{animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 45%}
+  @keyframes rv{from{opacity:0;transform:translateY(36px) scale(.985)}to{opacity:1;transform:none}}
+}
+
+/* filter */
+.seg{position:relative;display:inline-flex;margin:30px 0 26px;padding:4px;border-radius:999px;background:rgba(255,255,255,.08);max-width:100%;overflow-x:auto;scrollbar-width:none}
+.seg::-webkit-scrollbar{display:none}
+.seg__bg{position:absolute;top:4px;bottom:4px;left:0;width:0;border-radius:999px;background:var(--fg);transition:transform .45s var(--ease),width .45s var(--ease)}
+.seg button{position:relative;z-index:1;min-height:36px;padding:0 18px;border-radius:999px;font-size:14px;color:var(--mute);white-space:nowrap;transition:color .25s}
+.seg button[aria-selected="true"]{color:#000;font-weight:500}
+
+/* wall */
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+.card{position:relative;aspect-ratio:9/16;border-radius:24px;overflow:hidden;background:var(--surface);text-align:left;isolation:isolate;box-shadow:inset 0 0 0 1px var(--line);transition:transform .5s var(--ease)}
+.card:hover{transform:translateY(-6px)}
+.card:active{transform:scale(.98)}
+.card video{position:absolute;inset:0;z-index:0;transition:transform .9s var(--ease)}
+.card:hover video{transform:scale(1.05)}
+.card::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 48%,rgba(0,0,0,.85))}
+.card__meta{position:absolute;inset:auto 0 0;z-index:2;padding:16px}
+.card__meta h3{font-size:clamp(14px,1.7vw,17px);font-weight:600;letter-spacing:-.01em;margin-top:8px;text-wrap:pretty}
+.card__meta p{font-size:12.5px;color:#d1d1d6;margin-top:2px}
+.tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.18);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.card__play{position:absolute;top:12px;right:12px;z-index:2;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.2);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.card__play svg{width:12px;height:12px;fill:#fff;margin-left:2px}
+.pop{animation:pop .6s var(--ease) both}
+@keyframes pop{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:none}}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(0,0,0,.8);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+.modal__box{position:relative;height:min(86svh,820px);max-width:100%;aspect-ratio:9/16;border-radius:28px;overflow:hidden;background:#000;box-shadow:0 0 0 1px var(--line),0 40px 120px rgba(0,0,0,.8)}
+.modal__box video{object-fit:contain}
+.modal__info{position:absolute;inset:0 0 auto;padding:18px 64px 44px 18px;background:linear-gradient(180deg,rgba(0,0,0,.7),transparent);pointer-events:none}
+.modal__info h3{font-size:17px;margin-top:8px}.modal__info p{font-size:13px;color:#d1d1d6}
+.modal__x{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;background:rgba(60,60,67,.75);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:grid;place-items:center;z-index:2}
+.modal__x svg{width:14px;height:14px;stroke:#fff;stroke-width:2.4;fill:none;stroke-linecap:round}
+
+/* statement + tiles */
+.statement{text-align:center;padding-block:72px}
+.statement h2{font-size:clamp(34px,6.6vw,70px);max-width:900px;margin:0 auto}
+.statement .sub{margin-inline:auto}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:40px}
+@media(max-width:900px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tile{background:var(--surface);border-radius:26px;padding:24px;min-height:200px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:inset 0 0 0 1px var(--line)}
+.tile h3{font-size:21px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
+.tile p{color:var(--mute);font-size:15px;line-height:1.4}
+.tile .k{font-size:13px;font-weight:600;color:var(--blue-hi);letter-spacing:.02em}
+.offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
+@media(max-width:900px){.offers{grid-template-columns:minmax(0,1fr)}}
+.offers .tile{min-height:240px}
+.stack{margin-top:16px;background:var(--surface-2);border-radius:26px;padding:26px;box-shadow:inset 0 0 0 1px var(--line)}
+.stack h3{font-size:13px;color:var(--mute);font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.08);font-size:14px}
+.nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px;text-align:center}
+.nums b{display:block;font-size:clamp(34px,7vw,64px);font-weight:700;letter-spacing:-.04em;line-height:1.05;font-variant-numeric:tabular-nums}
+.nums span{color:var(--mute);font-size:14px}
+
+/* contact */
+.contact{text-align:center;padding-block:96px 72px}
+.contact h2{font-size:clamp(34px,6.6vw,70px);max-width:860px;margin:0 auto}
+.rows{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:34px}
+.copy{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:0 8px 0 20px;border-radius:999px;background:var(--surface-2);box-shadow:inset 0 0 0 1px var(--line);font-size:16px;max-width:100%}
+.copy span{user-select:all;-webkit-user-select:all;overflow-wrap:anywhere;text-align:left}
+.copy button{min-height:34px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.12);font-size:13px;font-weight:500;white-space:nowrap}
+.copy button:hover{background:rgba(255,255,255,.2)}
+.foot{border-top:1px solid var(--line);color:var(--mute);font-size:12.5px;text-align:center;padding-block:26px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.phone{transform:none}}
+</style>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="#top">Leodennis Matos Frometa</a>
+    <nav class="nav__links" aria-label="Sections"><a href="#work">Work</a><a href="#skills">Skills</a><a href="#offers">Offers</a><a href="#contact">Contact</a></nav>
+    <a class="btn btn--sm" href="#contact">Hire me</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero wrap">
+    <div class="portrait rise"><div class="portrait__in"><img src="portrait.jpg" width="860" height="1147" alt="Leodennis Matos Frometa" fetchpriority="high"></div></div>
+    <div class="hero__copy">
+      <p class="eyebrow rise">AI Visual Content Creator · Dubai</p>
+      <h1 class="rise">Visuals that <span class="grad">sell.</span></h1>
+      <p class="lead rise">Rhythm makes the cut, now powered by AI.</p>
+      <div class="cta rise"><a class="btn" href="#work">Watch my work</a><a class="link" href="#contact">Get in touch ›</a></div>
+    </div>
+    <div class="stage" id="stage" aria-hidden="true">
+      <div class="phone"><video src="videos/clip-04.mp4" poster="posters/clip-04.jpg" muted loop playsinline autoplay preload="metadata"></video></div>
+      <div class="phone"><video src="videos/clip-01.mp4" poster="posters/clip-01.jpg" muted loop playsinline autoplay preload="metadata"></video></div>
+      <div class="phone"><video src="videos/clip-07.mp4" poster="posters/clip-07.jpg" muted loop playsinline autoplay preload="metadata"></video></div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="work">
+    <div class="rv">
+      <p class="eyebrow">Portfolio</p>
+      <h2>Selected work.</h2>
+      <p class="sub">Eight AI-generated videos for real estate, lifestyle and fitness brands in Dubai. Tap any video to watch it full screen with sound.</p>
+    </div>
+    <div class="seg" id="seg" role="tablist" aria-label="Filter by category">
+      <span class="seg__bg" id="segbg"></span>
+      <button role="tab" aria-selected="true" data-cat="All">All</button>
+      <button role="tab" aria-selected="false" data-cat="Real Estate">Real Estate</button>
+      <button role="tab" aria-selected="false" data-cat="Lifestyle">Lifestyle</button>
+      <button role="tab" aria-selected="false" data-cat="Fitness">Fitness</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="statement wrap">
+    <div class="rv">
+      <h2>A musician&rsquo;s sense of <span class="grad">rhythm</span>, behind every cut.</h2>
+      <p class="sub">Professional musician and music teacher turned AI visual creator. Fast executor, creative thinker, marketing oriented. My portfolio speaks before my language, so I communicate through high-impact visuals.</p>
+    </div>
+    <div class="nums rv">
+      <div><b>8</b><span>AI videos in this portfolio</span></div>
+      <div><b>9:16</b><span>Vertical, made for Reels and Shorts</span></div>
+      <div><b>3</b><span>Series: real estate, lifestyle, fitness</span></div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="skills">
+    <div class="rv"><p class="eyebrow">What I do</p><h2>Made for brands that move fast.</h2></div>
+    <div class="facts">
+      <div class="tile rv"><span class="k">Video</span><div><h3>AI Video</h3><p>Short vertical videos and animations for ads and social media.</p></div></div>
+      <div class="tile rv"><span class="k">Image</span><div><h3>Marketing Visuals</h3><p>High-quality visuals, branding materials and pitch presentations.</p></div></div>
+      <div class="tile rv"><span class="k">Social</span><div><h3>Campaign Content</h3><p>Reels, TikTok, YouTube Shorts, Meta and LinkedIn, sized for each feed.</p></div></div>
+      <div class="tile rv"><span class="k">Story</span><div><h3>Visual Stories</h3><p>Products, lifestyle and real estate concepts told in seconds.</p></div></div>
+    </div>
+    <div class="stack rv">
+      <h3>AI stack and tools</h3>
+      <div class="chips">
+        <span class="chip">Midjourney</span><span class="chip">Flux Pro</span><span class="chip">Adobe Firefly</span><span class="chip">Krea AI</span><span class="chip">Leonardo AI</span>
+        <span class="chip">Runway</span><span class="chip">Sora</span><span class="chip">Veo</span><span class="chip">Luma</span><span class="chip">Pika</span><span class="chip">Kaiber</span>
+        <span class="chip">Premiere Pro</span><span class="chip">After Effects</span><span class="chip">Photoshop</span><span class="chip">CapCut</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="offers">
+    <div class="rv">
+      <p class="eyebrow">Work with me</p>
+      <h2>Three ways to start.</h2>
+      <p class="sub">Monthly or one-off packages for businesses in Dubai. Tell me what you sell and I will send you a plan.</p>
+    </div>
+    <div class="offers">
+      <div class="tile rv"><span class="k">Video</span><div><h3>AI video for real estate and brands</h3><p>A monthly pack of vertical Reels, Shorts and ads built from your listings, products and brand.</p></div></div>
+      <div class="tile rv"><span class="k">Web</span><div><h3>Website and WhatsApp assistant</h3><p>A fast landing page plus an automatic WhatsApp assistant that answers questions and collects leads.</p></div></div>
+      <div class="tile rv"><span class="k">Spanish</span><div><h3>Content in Spanish</h3><p>Posts, short videos and guides in Spanish for Latin American buyers and the Latino community in Dubai.</p></div></div>
+    </div>
+    <div class="cta rv" style="margin-top:30px"><a class="btn" href="#contact">Request a plan</a></div>
+  </section>
+
+  <section class="contact wrap" id="contact">
+    <div class="rv">
+      <h2>Let&rsquo;s make something <span class="grad">people stop for.</span></h2>
+      <p class="sub" style="margin-inline:auto">Open to full-time, freelance and remote roles in Dubai, UAE.</p>
+      <div class="rows">
+        <div class="copy"><span>matosleo491@gmail.com</span><button type="button" data-copy="matosleo491@gmail.com">Copy</button></div>
+        <div class="copy"><span>+971 528 859 824</span><button type="button" data-copy="+971 528 859 824">Copy</button></div>
+      </div>
+      <div class="cta" style="margin-top:26px"><a class="btn" href="https://wa.me/971528859824?text=Hi%20Leodennis%2C%20I%20saw%20your%20portfolio." target="_blank" rel="noopener">Message on WhatsApp</a></div>
+    </div>
+  </section>
+</main>
+<footer class="foot">Leodennis Matos Frometa Portafolio · AI Visual Content Creator · Dubai, UAE</footer>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="modal__box" id="mbox">
+    <video id="mvid" controls playsinline loop></video>
+    <div class="modal__info"><span class="tag" id="mcat"></span><h3 id="mtitle"></h3><p id="msub"></p></div>
+    <button class="modal__x" id="mx" type="button" aria-label="Close video"><svg viewBox="0 0 14 14"><path d="M2 2l10 10M12 2L2 12"/></svg></button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var WORK=[
+    ['01','Real Estate','Off-Plan Character Series','Episode 1 · Dubai towers'],
+    ['02','Real Estate','Off-Plan Character Series','Episode 2 · Skyline views'],
+    ['03','Real Estate','Off-Plan Character Series','Episode 3 · Under construction'],
+    ['04','Lifestyle','Downtown Executive','Burj Khalifa skyline'],
+    ['05','Lifestyle','Marina Drive','Dubai Marina at sunrise'],
+    ['06','Fitness','Morning Ritual','Luxury gym entrance'],
+    ['07','Fitness','Training Floor','Skyline gym walk'],
+    ['08','Fitness','Wellness Suite','Residence interior']
+  ];
+  var M=window.Motion||{}; var hasMotion=typeof M.animate==='function';
+  var grid=document.getElementById('grid');
+  var PLAY='<svg viewBox="0 0 12 12"><path d="M1 0l11 6-11 6z"/></svg>';
+
+  /* build wall */
+  WORK.forEach(function(w){
+    var b=document.createElement('button'); b.type='button'; b.className='card'; b.dataset.cat=w[1]; b.dataset.id=w[0];
+    b.setAttribute('aria-label','Play '+w[2]+', '+w[3]);
+    b.innerHTML='<video src="videos/clip-'+w[0]+'.mp4" poster="posters/clip-'+w[0]+'.jpg" muted loop playsinline preload="none"></video>'+
+      '<span class="card__play">'+PLAY+'</span>'+
+      '<span class="card__meta"><span class="tag">'+w[1]+'</span><h3>'+w[2]+'</h3><p>'+w[3]+'</p></span>';
+    b.addEventListener('click',function(){openModal(w)});
+    grid.appendChild(b);
+  });
+
+  /* play cards only while on screen */
+  if('IntersectionObserver' in window){
+    var vio=new IntersectionObserver(function(es){es.forEach(function(e){
+      var v=e.target.querySelector('video'); if(!v) return;
+      if(e.isIntersecting){var p=v.play(); if(p&&p.catch)p.catch(function(){})} else v.pause();
+    })},{threshold:.55});
+    [].forEach.call(grid.children,function(c){vio.observe(c)});
+  }
+
+  /* segmented filter */
+  var seg=document.getElementById('seg'), bg=document.getElementById('segbg'), tabs=[].slice.call(seg.querySelectorAll('button'));
+  function moveBg(btn){bg.style.width=btn.offsetWidth+'px';bg.style.transform='translateX('+btn.offsetLeft+'px)'}
+  function setCat(btn){
+    tabs.forEach(function(t){t.setAttribute('aria-selected',t===btn?'true':'false')}); moveBg(btn);
+    var cat=btn.dataset.cat, shown=[];
+    [].forEach.call(grid.children,function(c){var on=cat==='All'||c.dataset.cat===cat; c.hidden=!on; c.classList.remove('pop'); if(on)shown.push(c)});
+    var done=false;
+    if(hasMotion){try{ M.animate(shown,{opacity:[0,1],y:[24,0]},{duration:.6,delay:M.stagger?M.stagger(.06):0,easing:[.22,1,.36,1],ease:[.22,1,.36,1]}); done=true }catch(e){}}
+    if(!done){void grid.offsetWidth; shown.forEach(function(c,i){c.style.animationDelay=(i*.05)+'s';c.classList.add('pop')})}
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){setCat(t)})});
+  function initSeg(){moveBg(seg.querySelector('[aria-selected="true"]'))}
+  initSeg(); window.addEventListener('resize',initSeg); window.addEventListener('load',initSeg);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(initSeg);
+
+  /* modal */
+  var modal=document.getElementById('modal'), mbox=document.getElementById('mbox'), mv=document.getElementById('mvid'), last=null;
+  function openModal(w){
+    last=document.activeElement;
+    mv.src='videos/clip-'+w[0]+'.mp4'; mv.poster='posters/clip-'+w[0]+'.jpg'; mv.muted=false;
+    document.getElementById('mcat').textContent=w[1]; document.getElementById('mtitle').textContent=w[2]; document.getElementById('msub').textContent=w[3];
+    modal.hidden=false; document.documentElement.style.overflow='hidden';
+    var ok=false;
+    if(hasMotion){try{
+      M.animate(modal,{opacity:[0,1]},{duration:.3});
+      M.animate(mbox,{opacity:[0,1],scale:[.86,1],y:[40,0]},{duration:.7,easing:M.spring?M.spring({stiffness:230,damping:24}):[.22,1,.36,1]});
+      ok=true}catch(e){}}
+    if(!ok){modal.classList.add('pop')}
+    var p=mv.play(); if(p&&p.catch)p.catch(function(){mv.muted=true;mv.play().catch(function(){})});
+    document.getElementById('mx').focus();
+  }
+  function closeModal(){
+    mv.pause(); mv.removeAttribute('src'); mv.load(); modal.hidden=true; modal.classList.remove('pop'); document.documentElement.style.overflow='';
+    if(last&&last.focus)last.focus();
+  }
+  document.getElementById('mx').addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)closeModal()});
+
+  /* hero parallax (own rAF loop, no library needed) */
+  var stage=document.getElementById('stage'), phones=[].slice.call(stage.children), ticking=false;
+  function upd(){
+    var r=stage.getBoundingClientRect(), h=window.innerHeight||800;
+    var p=Math.min(1,Math.max(0,(h-r.top)/(h+r.height)));
+    phones.forEach(function(el){el.style.setProperty('--p',p.toFixed(3))}); ticking=false;
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(upd)}},{passive:true});
+  upd();
+
+  /* copy buttons */
+  [].forEach.call(document.querySelectorAll('[data-copy]'),function(b){
+    b.addEventListener('click',function(){
+      var txt=b.dataset.copy, span=b.parentNode.querySelector('span');
+      function sel(){var r=document.createRange();r.selectNodeContents(span);var s=window.getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Select + copy'}
+      function ok(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)}
+      try{navigator.clipboard.writeText(txt).then(ok,sel)}catch(e){sel()}
+    });
+  });
+})();
+</script>
